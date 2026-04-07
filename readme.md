@@ -38,20 +38,17 @@
 
 ## Примеры тестовых запросов (с реальными ответами)
 
-### Регистрация
-`curl ...` → `{"message":"User created"}`
-curl -X POST http://127.0.0.1:8000/api/accounts/register/ \ -H "Content-Type: application/json" \-d '{"email":"user@example.com","password":"123456","password2":"123456","first_name":"John","last_name":"Doe"}'
+# Регистрация
+curl -X POST http://127.0.0.1:8000/api/accounts/register/ -H "Content-Type: application/json" -d "{\"email\":\"user@example.com\",\"password\":\"123456\",\"password2\":\"123456\",\"first_name\":\"John\",\"last_name\":\"Doe\"}"
 
-### Логин админа
-`curl ...` → `{"token":"eyJ...","user_id":1}`
-curl -X POST http://127.0.0.1:8000/api/accounts/login/ \ -H "Content-Type: application/json" \ -d '{"email":"admin@example.com","password":"admin123"}'
+# Логин админа
+curl -X POST http://127.0.0.1:8000/api/accounts/login/ -H "Content-Type: application/json" -d "{\"email\":\"admin@example.com\",\"password\":\"admin123\"}"
 
-### Получение товаров (с токеном)
-curl -X GET http://127.0.0.1:8000/api/access/products/ \ -H "Authorization: Bearer <ваш_токен>"
+# Получение товаров (с токеном)
+curl -X GET http://127.0.0.1:8000/api/access/products/ -H "Authorization: Bearer <ваш_токен>"
 
-### Создание правила (админ)
-`curl ...` → `{"message":"Rule created/updated","id":7}`
-curl -X GET http://127.0.0.1:8000/api/access/products/ \-H "Authorization: Bearer <ваш_токен>"
+# Создание правила (админ)
+curl -X POST http://127.0.0.1:8000/api/access/rules/ -H "Content-Type: application/json" -H "Authorization: Bearer <токен_админа>" -d "{\"role\":\"user\",\"element\":\"products\",\"can_read\":true,\"can_create\":true}"
 
 ## Запуск проекта
 
