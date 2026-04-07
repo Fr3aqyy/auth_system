@@ -21,18 +21,19 @@
 ## Реализованные API
 
 
-Метод	   Эндпоинт	               Описание	                                                      Требует аутентификации	Проверка прав доступа
-POST	   /api/accounts/register/	Регистрация нового пользователя (email, пароль, имя, фамилия)	Нет	            Нет
-POST	   /api/accounts/login/	   Вход по email и паролю, возвращает JWT-токен	                  Нет	            Нет
-GET	   /api/accounts/profile/	Получить данные своего профиля	                              Да (JWT)	         Нет (только владелец)
-PUT	   /api/accounts/profile/	Обновить имя/фамилию	                                          Да (JWT)	         Нет (только владелец)
-DELETE	/api/accounts/profile/	Мягкое удаление аккаунта (is_active=False)	                  Да (JWT)	         Нет (только владелец)
-POST	   /api/accounts/logout/	Выход (удаление токена на клиенте)	                           Да (JWT)	         Нет
-GET	   /api/access/products/	Получить список товаров (mock)	                              Да	               read на products
-POST	   /api/access/products/	Создать новый товар (mock)	                                    Да	               create на products
-GET	   /api/access/orders/	   Получить список заказов (mock)	                              Да	               read на orders
-GET	   /api/access/rules/	   Получить все правила доступа (только админ)	                  Да	               read_all на access_rules
-POST	   /api/access/rules/	   Создать/обновить правило доступа (только админ)	               Да	               create на access_rules
+| Метод   | Эндпоинт | Описание | Требует аутентификации | Проверка прав |
+|---------|----------|----------|------------------------|---------------|
+| POST | `/api/accounts/register/` | Регистрация нового пользователя (email, пароль, имя, фамилия) | Нет | Нет |
+| POST | `/api/accounts/login/` | Вход по email и паролю, возвращает JWT-токен | Нет | Нет |
+| GET | `/api/accounts/profile/` | Получить данные своего профиля | Да (JWT) | Нет (только владелец) |
+| PUT | `/api/accounts/profile/` | Обновить имя/фамилию | Да (JWT) | Нет (только владелец) |
+| DELETE | `/api/accounts/profile/` | Мягкое удаление аккаунта (`is_active=False`) | Да (JWT) | Нет (только владелец) |
+| POST | `/api/accounts/logout/` | Выход (удаление токена на клиенте) | Да (JWT) | Нет |
+| GET | `/api/access/products/` | Получить список товаров (mock) | Да | `read` на `products` |
+| POST | `/api/access/products/` | Создать новый товар (mock) | Да | `create` на `products` |
+| GET | `/api/access/orders/` | Получить список заказов (mock) | Да | `read` на `orders` |
+| GET | `/api/access/rules/` | Получить все правила доступа (только админ) | Да | `read_all` на `access_rules` |
+| POST | `/api/access/rules/` | Создать/обновить правило доступа (только админ) | Да | `create` на `access_rules` |
 
 
 ## Примеры тестовых запросов (с реальными ответами)
