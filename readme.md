@@ -52,9 +52,11 @@ curl -X POST http://127.0.0.1:8000/api/access/rules/ -H "Content-Type: applicati
 
 ## Запуск проекта
 
-pip install -r requirements.txt
-python -m venv venv
-venv\Scripts\activate  # Windows
+- pip install -r requirements.txt
+
+- python -m venv venv
+
+- venv\Scripts\activate  # Windows
 
 ## Setup
 
